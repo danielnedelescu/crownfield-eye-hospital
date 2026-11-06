@@ -1,0 +1,101 @@
+erDiagram
+    SPECIALTIES ||--o{ CLINICIANS : categorises
+    PATIENTS ||--o{ APPOINTMENTS : attends
+    CLINICIANS ||--o{ APPOINTMENTS : conducts
+    CLINICS ||--o{ APPOINTMENTS : hosts
+    APPOINTMENTS ||--o{ APPOINTMENT_DIAGNOSES : has
+    DIAGNOSES ||--o{ APPOINTMENT_DIAGNOSES : labels
+    APPOINTMENTS ||--o{ APPOINTMENT_TREATMENTS : has
+    TREATMENTS ||--o{ APPOINTMENT_TREATMENTS : labels
+    APPOINTMENTS ||--o{ PRESCRIPTIONS : produces
+    PRESCRIPTIONS ||--|{ PRESCRIPTION_ITEMS : contains
+    MEDICINES ||--o{ PRESCRIPTION_ITEMS : used_in
+    APPOINTMENTS ||--o| FOLLOWUP_PLANS : may_have
+    APPOINTMENTS ||--o{ APPOINTMENT_STATUS_AUDIT : audited_by
+
+    SPECIALTIES {
+        int specialty_id PK
+        string specialty_name
+    }
+    PATIENTS {
+        string patient_id PK
+        string full_name
+        string postcode
+        date date_of_birth
+        binary phone_ciphertext
+        timestamp created_at
+    }
+    CLINICIANS {
+        int clinician_id PK
+        string full_name
+        int specialty_id FK
+        string work_email
+    }
+    CLINICS {
+        int clinic_id PK
+        string clinic_name
+        string area
+    }
+    APPOINTMENTS {
+        int appointment_id PK
+        string patient_id FK
+        int clinician_id FK
+        int clinic_id FK
+        date appointment_date
+        time appointment_time
+        int duration_minutes
+        string status
+    }
+    DIAGNOSES {
+        int diagnosis_id PK
+        string diagnosis_name
+    }
+    APPOINTMENT_DIAGNOSES {
+        int appointment_id PK,FK
+        int diagnosis_id PK,FK
+        string clinical_note
+    }
+    TREATMENTS {
+        int treatment_id PK
+        string treatment_name
+        string description
+    }
+    APPOINTMENT_TREATMENTS {
+        int appointment_id PK,FK
+        int treatment_id PK,FK
+        string treatment_note
+    }
+    MEDICINES {
+        int medicine_id PK
+        string medicine_name
+        string formulation
+    }
+    PRESCRIPTIONS {
+        int prescription_id PK
+        int appointment_id FK
+        date prescribed_on
+        string notes
+    }
+    PRESCRIPTION_ITEMS {
+        int prescription_id PK,FK
+        int medicine_id PK,FK
+        string dose
+        string route
+        string frequency
+        int duration_days
+    }
+    FOLLOWUP_PLANS {
+        int followup_id PK
+        int appointment_id FK
+        date due_date
+        string priority
+        string status
+        string followup_note
+    }
+    APPOINTMENT_STATUS_AUDIT {
+        int audit_id PK
+        int appointment_id FK
+        string old_status
+        string new_status
+        timestamp changed_at
+    }
