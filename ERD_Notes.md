@@ -2,7 +2,7 @@
 
 **Student A:** Dumitru-Daniel Nedelescu  
 **Student ID:** G1423264  
-**Course:** Level 4 IT — Introduction to Database
+**Course:** Introduction to Database
 
 ## Purpose
 
