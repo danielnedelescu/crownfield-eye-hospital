@@ -2,11 +2,11 @@
 
 **Student A:** Dumitru-Daniel Nedelescu  
 **Student ID:** G1423264  
-**Course:** Level 4 IT — Introduction to Database
+**Course:** Introduction to Database
 
 ## Project overview
 
-This is a learning project based on a fictional eye hospital. The group created a MySQL relational database to organise patient, clinic, clinician, appointment, diagnosis, prescription and follow-up information. The project uses synthetic data, not real hospital records.
+The group created a MySQL relational database to organise patient, clinic, clinician, appointment, diagnosis, prescription and follow-up information. The project uses synthetic data, not real hospital records.
 
 ## My contribution — Student A
 
@@ -50,8 +50,5 @@ My individual report, **`Crownfield_A_Individual_Report_No_Footer.docx`**, descr
 
 ## Use of AI tools
 
-I used OpenAI ChatGPT to help organise the report and README, explain steps in MySQL Workbench, and improve the clarity of my English. I checked the work in MySQL Workbench and used my own test results and screenshots as evidence. AI-generated explanations are not presented as proof that a test passed.
+I used OpenAI ChatGPT to help organise the report and README, and improve the clarity of my English.
 
-## Notes
-
-This is an educational database prototype, not a production hospital system. Do not upload passwords, private connection details or real patient data to this repository.
